@@ -1,5 +1,3 @@
-//C4CATALC JOB (112270000),'CAT ALLOC     ',MSGLEVEL=(1,1),
-//         MSGCLASS=R,CLASS=A,NOTIFY=&SYSUID
 //*--------------------------------------------------------------------
 //*  IDCAMS - DELETE AND DEFINE CATALOG DATA SETS
 //*--------------------------------------------------------------------

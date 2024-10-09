@@ -1,7 +1,3 @@
-//ORDGET  JOB (112470000),'PDQA',NOTIFY=&SYSUID,REGION=0M,
-//           MSGCLASS=A,CLASS=A,MSGLEVEL=(1,1),NOTIFY=&SYSUID
-//*
-//*********************************************************************
 //GETDATA  EXEC PGM=DFSRRC00,                 IMS MEDIATOR
 //          PARM=(BMP,ORDGET,PORDRMRA,,,,,,,,,,,IMSA)
 //*         PARM=(DLI,ORDGET,PORDRMRA,,,,,,,,,,,N,N)

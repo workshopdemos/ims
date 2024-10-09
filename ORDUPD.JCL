@@ -1,7 +1,3 @@
-//ORDUPD  JOB (112470000),'PDQA',NOTIFY=&SYSUID,REGION=0M,
-//           MSGCLASS=A,CLASS=A,MSGLEVEL=(1,1),NOTIFY=&SYSUID
-//*
-//*********************************************************************
 //UPDDATA  EXEC PGM=DFSRRC00,                 IMS MEDIATOR
 //          PARM=(BMP,ORDUPD,PORDRMRA,,,,,,,,,,,IMSA)
 //*         PARM=(DLI,ORDUPD,PORDRMRA,,,,,,,,,,,N,N)
