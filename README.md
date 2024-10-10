@@ -17,4 +17,8 @@
 </p>
 
 3. Make sure the initial build process has been completed successfully (exit code: 0 message in the active terminal)
+4. Install c3270 from a terminal using the following command: <code> sudo apt-get install c3270 </code>
+5. To run the emulator, use the following command: <code> c3270 ipaddress </code>
+6. Login to TPX session using the given mainframe username and password.
+7. Select the first z/OS instance from TPX menu. 
 
