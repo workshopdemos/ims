@@ -1,3 +1,11 @@
+//*--------------------------------------------------------------------
+//*  IDCAMS - DELETE DATA SETS                                         
+//*--------------------------------------------------------------------
+//DELDS   EXEC PGM=IDCAMS                                              
+//SYSPRINT  DD  SYSOUT=*                                               
+//SYSIN     DD  *                                                      
+  DELETE WORKSHOP.MACB.C9CATUPD.LOG1                                   
+  SET MAXCC=0                                                          
 //*******************************************************************   
 //* DFS3UACB GENERATES ACB MEMBERS IN AN ACB LIBRARY BY CALLING THE     
 //* ACB MAINTENANCE UTILITY. IN THE SAME JOB STEP,                      
@@ -28,8 +36,10 @@
 //*******************************************************************   
 //SYSIN    DD  *                                                        
       BUILD PSB=PORDRMRG                                                
-/*                                                                      
-//IEFRDER  DD  DSN=IMSSYS15.SLDS,DISP=SHR                               
+/*                                                                             
+//IEFRDER  DD  DSN=WORKSHOP.MACB.C9CATUPD.LOG1,DISP=(NEW,CATLG), 
+//             SPACE=(CYL,(1,1)),                                
+//             UNIT=SYSALLDA                                     
 //SYSPRINT DD  SYSOUT=*                                                 
 //DFSVSAMP DD  *                                                        
 24576,16                                                                
