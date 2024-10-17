@@ -1,3 +1,11 @@
+//*--------------------------------------------------------------------
+//*  IDCAMS - DELETE DATA SETS                                         
+//*--------------------------------------------------------------------
+//DELDS   EXEC PGM=IDCAMS                                              
+//SYSPRINT  DD  SYSOUT=*                                               
+//SYSIN     DD  *                                                      
+  DELETE WORKSHOP.MACB.C6CATALD.LOG1                                   
+  SET MAXCC=0                                                          
 //*-------------------------------------------------------------------- 
 //* LOAD CATALOG                                                        
 //*-------------------------------------------------------------------- 
@@ -11,8 +19,10 @@
 //         DD  DSN=IMSSYS15.DBDLIB,DISP=SHR                             
 //         DD  DSN=IMSSYS15.PSBLIB,DISP=SHR                             
 //IMSACB01 DD  DSN=WORKSHOP.MACB.ACBLIB,DISP=OLD                        
-//         DD  DSN=IMSSYS15.ACBLIB,DISP=SHR                             
-//IEFRDER  DD  DSN=IMSSYS15.SLDS,DISP=SHR                               
+//         DD  DSN=IMSSYS15.ACBLIB,DISP=SHR                                                            
+//IEFRDER  DD  DSN=WORKSHOP.MACB.C6CATALD.LOG1,DISP=(NEW,CATLG),  
+//             SPACE=(CYL,(1,1)),                                 
+//             UNIT=SYSALLDA                                      
 //SYSPRINT DD  SYSOUT=*                                                 
 //DFSVSAMP DD  *                                                        
 24576,16                                                                
