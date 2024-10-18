@@ -265,3 +265,26 @@ Perform the steps needed to set up the IMS catalog and directory. Step 1 creates
  	  Image copies of the database and secondary index are created. The DBARPTS output provides detailed information about the IMS catalog database.
 
 You have prepared the IMS catalog and directory for the transition to IMS-managed ACBs. You can now proceed with the transition process.
+
+# Transition to IMS-Managed ACBs #
+Perform the steps needed to transition to an IMS-managed ACBs environment. Steps 2 and 3 involve executable jobs to add new resources to the IMS catalog and activate them.
+1. ### Restart IMS Control Region ###
+   To enable IMS-managed ACBs, restart the IMS control region using the modified DFSDF member.
+2. ### Add New Item to IMS Catalog and Staging Directory - JCL(C9CATUPD) ###
+   Specify MANAGEACBS=STAGE in SYSINP DD, and modify the DFS3PU00 parameter to include the relevant PSBNAME and DFSDF member name. Submit the JCL.
+
+   The JCL invokes the DFS3UACB utility to load the resource into the IMS catalog and staging directory data set.
+3. ### Activate Newly Added Resource - JCL(C99IMCMD) ###
+   Update the JCL to import the PSB definition from staging to active directory, and to create new program resources. Use the following IMS commands:
+   ```
+   IMPORT DEFN SOURCE(CATALOG) 
+   CRE PGM NAME(PORDRMRG) LIKE(RSC(PORDRMRA))
+   ```
+   Submit the JCL.
+
+   The PSB definition is imported from the IMS catalog to the active directory, and a new resource is created.
+4. ### Test ORDRMR Database with Newly Added PSB ###
+   To verify functionality, run ORDGET and ORDUPD jobs. For the subsequent runs, change the PSBNAME in the DFSRRC00 parameter to the newly added PSB, and observe the differences in behavior between URDUPD runs.
+
+After you complete these steps, your environment is successfully migrated to IMS-managed ACBs, and functionality has been verified with the newly added PSB.
+
